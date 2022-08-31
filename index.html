@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
   <meta name="author" content="Samuel Amaro Do Nascimento" />
   <meta name="description" content="Intro section with dropdown navigation" />
   <meta name="keywords" content="HTML5, CSS3, JS, es6, exe, desafio de codificação front end, app, front-end" />
@@ -11,20 +11,89 @@
 </head>
 <body>
 
-  Features
-  Company
-  Careers
-  About
+  <main class="main">
+    <header class="main__header">
+      <div class="logo">
+        <img src="./images/logo.svg" alt="logo, identidade visual, a imagen representa uma palavra snap, com cor preta e caracteres de espessura grossa, toda palavra em minuscula"/>
+      </div>
+      <nav class="menu">
+        <ul class="menu__navigation-links">
+          <li class="menu__navigation-link-item">
+            <a href="#Features" rel="next" target="_self" class="menu__navigation-link">Features</a>
+            <div class="dropdown dropdown__features" role="menu"> <!--dropdown menu features-->
+              <div class="dropdown__item" tabindex="0" role="menuitem">
+                <img src="./images/icon-todo.svg" alt="" class="dropdown__item-icon" title="icon todo"/>
+                <p class="dropdown__item-text">Todo List</p>
+              </div>
+              <div class="dropdown__item" tabindex="0" role="menuitem">
+                <img src="./images/icon-calendar.svg" alt="" class="dropdown__item-icon" title="icon calendar"/>
+                <p class="dropdown__item-text">Calendar</p>
+              </div>
+              <div class="dropdown__item" tabindex="0" role="menuitem">
+                <img src="./images/icon-reminders.svg" alt="" class="dropdown__item-icon" title="icon reminders"/>
+                <p class="dropdown__item-text">Reminders</p>
+              </div>
+              <div class="dropdown__item" tabindex="0" role="menuitem">
+                <img src="./images/icon-planning.svg" alt="" class="dropdown__item-icon" title="icon planning"/>
+                <p class="dropdown__item-text">Planning</p>
+              </div>
+            </div>
+          </li>
+          <li class="menu__navigation-link-item">
+            <a href="#Company" rel="next" target="_self" class="menu__navigation-link">Company</a>
+            <div class="dropdown dropdown__company" role="menu"> <!--dropdown menu company-->
+              <div class="dropdown__item" tabindex="0" role="menuitem">
+                <p class="dropdown__item-text">History</p>
+              </div>
+              <div class="dropdown__item" tabindex="0" role="menuitem">
+                <p class="dropdown__item-text">Our Team</p>
+              </div>
+              <div class="dropdown__item" tabindex="0" role="menuitem">
+                <p class="dropdown__item-text">Blog</p>
+              </div>
+            </div>
+          </li>
+          <li class="menu__navigation-link-item">
+            <a href="#Careers" rel="next" target="_self" class="menu__navigation-link">Careers</a>
+          </li>
+          <li class="menu__navigation-link-item">
+            <a href="#About" rel="next" target="_self" class="menu__navigation-link">About</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="buttons">
+        <button type="button" class="btn btn__login">Login</button>
+        <button type="button" class="btn btn__register">Register</button>
+      </div>
+    </header>
+    <section class="content">
+      <picture class="ilustration-side">
+        <source media="(max-width: 750px)" srcset="./images/image-hero-mobile.png" type="image/png" title="ilustration de hero computer"/>
+        <source media="(min-width: 751px)" srcset="./images/image-hero-desktop.png" type="image/png" title="ilustration de hero computer"/>
+        <img src="./images/image-hero-desktop.png" alt="homen com camiseta branca com computador sendo segurado por uma mão e na outra mão, utilizando-o" title="ilustration de hero computer"/>
+      </picture>
+      <div class="content__main">
+        <h1 class="title">Make remote work</h1>
+        <p class="description">Get your team in sync, no matter your location. Streamline processes,
+          create team rituals, and watch productivity soar.</p>
+        <button type="button" class="btn-learn-more">Learn more</button>
+        <ul class="clients">
+          <li class="clients__item">
+            <img src="./images/client-databiz.svg" alt="ilustration client databiz" title="databiz client" />
+          </li>
+          <li class="clients__item">
+            <img src="./images/client-audiophile.svg" alt="ilustration client audio phile" title="audio phile client" />
+          </li>
+          <li class="clients__item">
+            <img src="./images/client-meet.svg" alt="ilustration client meet" title="meet client" />
+          </li>
+          <li class="clients__item">
+            <img src="./images/client-maker.svg" alt="ilustration client marker" title="marker client" />
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
 
-  Login
-  Register
-
-  Make remote work
-
-  Get your team in sync, no matter your location. Streamline processes, 
-  create team rituals, and watch productivity soar.
-
-  Learn more
-  
 </body>
 </html>
