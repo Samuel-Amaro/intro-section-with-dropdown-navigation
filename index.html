@@ -29,18 +29,28 @@
           />
         </div>
         <!--dispositivos moveis e tablets, utilizar position absolute em relação ao body-->
-        <div class="menu">
+        <div class="menu menu_hidden">
           <nav class="navigation">
             <ul class="navigation__links">
               <li class="navigation__link-item">
-                <a
-                  href="#Features"
-                  rel="next"
-                  target="_self"
-                  class="navigation__link"
-                  >Features</a
+                <div class="navigation__row">
+                  <a
+                    href="#Features"
+                    rel="next"
+                    target="_self"
+                    class="navigation__link" 
+                    data-toggle="dropdown__features"
+                    >Features</a
+                  >
+                  <img
+                    src="./images/icon-arrow-down.svg"
+                    alt="icon ilustration arrow down"
+                  />
+                </div>
+                <div
+                  class="dropdown dropdown__features dropdown-close"
+                  role="menu"
                 >
-                <div class="dropdown dropdown__features" role="menu">
                   <!--dropdown menu features-->
                   <div class="dropdown__item" tabindex="0" role="menuitem">
                     <img
@@ -81,14 +91,24 @@
                 </div>
               </li>
               <li class="navigation__link-item">
-                <a
-                  href="#Company"
-                  rel="next"
-                  target="_self"
-                  class="navigation__link"
-                  >Company</a
+                <div class="navigation__row">
+                  <a
+                    href="#Company"
+                    rel="next"
+                    target="_self"
+                    class="navigation__link"
+                    data-toggle="dropdown__company"
+                    >Company</a
+                  >
+                  <img
+                    src="./images/icon-arrow-down.svg"
+                    alt="icon ilustration arrow down"
+                  />
+                </div>
+                <div
+                  class="dropdown dropdown__company dropdown-close"
+                  role="menu"
                 >
-                <div class="dropdown dropdown__company" role="menu">
                   <!--dropdown menu company-->
                   <div class="dropdown__item" tabindex="0" role="menuitem">
                     <p class="dropdown__item-text">History</p>
@@ -129,7 +149,11 @@
         <!--
           so aparecer em dispositivos moveis e tablets, desktop ser ocultado
         -->
-        <button type="button" class="btn btn-menu" title="botão para invocar menu lateral">
+        <button
+          type="button"
+          class="btn btn-menu"
+          title="botão para invocar menu lateral"
+        >
           <img src="./images/icon-menu.svg" alt="icon ilustration menu" />
         </button>
       </header>
@@ -153,7 +177,7 @@
             title="ilustration de hero computer"
           />
         </picture>
-        <div class="content__main">
+        <article class="content__main">
           <h1 class="title">Make remote work</h1>
           <p class="description">
             Get your team in sync, no matter your location. Streamline
@@ -198,8 +222,10 @@
               </div>
             </li>
           </ul>
-        </div>
+        </article>
       </section>
     </main>
+
+    <script src="./js/script.js"></script>
   </body>
 </html>
