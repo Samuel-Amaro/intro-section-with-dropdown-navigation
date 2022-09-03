@@ -7,6 +7,7 @@ let linksNavigation = document.querySelectorAll(".navigation__link");
 linksNavigation.forEach((link) => {
     if(link.dataset.toggle){
         link.addEventListener("pointerdown", handlerLinksNavigation);
+        link.addEventListener("keydown", handlerLinksNavigationKeys);
     }
 });
 
@@ -22,7 +23,7 @@ if(btnOpenMenu) {
 function showMenuMobile() {
     let menu = document.querySelector(".menu");
     let body = document.body;
-    let btnCloseMenuInner = `<button type="button" class="btn btn-close-menu">
+    let btnCloseMenuInner = `<button type="button" class="btn btn-close-menu" aria-label="Fechar Menu lateral" aria-expanded="false">
         <img src="./images/icon-close-menu.svg" alt="icon ilustration close menu" />
     </button>`;
     menu.insertAdjacentHTML("afterbegin", btnCloseMenuInner);
@@ -46,6 +47,13 @@ function handlerLinksNavigation(event) {
     toggleStateDropdownMenu(event.target.dataset.toggle, event.target);
 }
 
+function handlerLinksNavigationKeys(event) {
+    if(event.code === "Enter") {
+        toggleStateDropdownMenu(event.target.dataset.toggle, event.target);
+        toggleStateFocusDropdownMenu(event.target.dataset.toggle, event.target);
+    }
+}
+
 function toggleStateDropdownMenu(nameDropdown, link) {
     let dropdown = document.querySelector(`.${nameDropdown}`);
     if(dropdown.dataset.state === "hidden" && link.dataset.open === "false") {
@@ -61,6 +69,17 @@ function toggleStateDropdownMenu(nameDropdown, link) {
         dropdown.dataset.state = "hidden";
         link.dataset.open = "false";
         toggleImgClickLink(link);
+    }
+}
+
+function toggleStateFocusDropdownMenu(nameDropdown, link) {
+    let dropdown = document.querySelector(`.${nameDropdown}`);
+    //dropdown close
+    if(dropdown.dataset.state === "hidden" && link.dataset.open === "false") {
+        link.focus();
+    //dropdown open
+    }else if(dropdown.dataset.state === "visibility" && link.dataset.open === "true") {
+        dropdown.querySelector(".dropdown__link").focus();
     }
 }
 

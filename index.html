@@ -26,6 +26,8 @@
           <img
             src="./images/logo.svg"
             alt="logo, identidade visual, a imagen representa uma palavra snap, com cor preta e caracteres de espessura grossa, toda palavra em minuscula"
+            width="84"
+            height="27"
           />
         </div>
         <!--dispositivos moveis e tablets, utilizar position absolute em relação ao body-->
@@ -34,6 +36,7 @@
             <ul class="navigation__links" role="menu">
               <li class="navigation__link-item">
                 <a
+                  id="link-features"
                   href="#Features"
                   rel="next"
                   target="_self"
@@ -42,7 +45,6 @@
                   data-toggle="dropdown__features"
                   data-open="false"
                   role="menuitem"
-                  aria-expanded="true"
                   >Features
                   <img
                     src="./images/icon-arrow-down.svg"
@@ -84,13 +86,13 @@
               </li>
               <li class="navigation__link-item">
                 <a
+                  id="link-company"
                   href="#Company"
                   rel="next"
                   target="_self"
                   class="navigation__link"
                   data-toggle="dropdown__company"
                   data-open="false"
-                  aria-expanded="true"
                   role="menuitem"
                   >Company
                   <img
@@ -141,8 +143,8 @@
             </ul>
           </nav>
           <div class="buttons">
-            <button type="button" class="btn btn__login">Login</button>
-            <button type="button" class="btn btn__register">Register</button>
+            <button type="button" class="btn btn__login" aria-label="Botão Login">Login</button>
+            <button type="button" class="btn btn__register" aria-label="Botão registrar">Register</button>
           </div>
         </div>
         <!--
@@ -152,11 +154,13 @@
           type="button"
           class="btn btn-menu"
           title="botão para invocar menu lateral"
+          aria-label="Abrir menu lateral"
+          aria-expanded="true"
         >
           <img src="./images/icon-menu.svg" alt="icon ilustration menu" />
         </button>
       </header>
-      <section class="content">
+      <div class="content">
         <picture class="ilustration-side">
           <source
             media="(max-width: 750px)"
@@ -164,14 +168,16 @@
             type="image/png"
             title="ilustration de hero computer"
           />
+          <!--
           <source
             media="(min-width: 751px)"
             srcset="./images/image-hero-desktop.png"
             type="image/png"
             title="ilustration de hero computer"
           />
+          -->
           <img
-            src="./images/image-hero-desktop.png"
+            src="./images/image-hero-mobile.png"
             alt="homen com camiseta branca com computador sendo segurado por uma mão e na outra mão, utilizando-o"
             title="ilustration de hero computer"
           />
@@ -222,7 +228,7 @@
             </li>
           </ul>
         </article>
-      </section>
+      </div>
     </main>
 
     <script src="./js/script.js"></script>
