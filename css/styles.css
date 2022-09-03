@@ -68,17 +68,13 @@ body{
 }
 
 .navigation__link{
-    display: block;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 15px;
     text-decoration: none;
     color: var(--medium-gray);
     font-weight: 500;
-}
-
-.navigation__row{
-    display: flex;
-    align-items: center;
-    flex-flow: row nowrap;
-    gap: 15px;
 }
 
 .navigation__link-item:nth-of-type(2) .navigation__row{ column-gap: 13px; }
@@ -120,9 +116,52 @@ body{
 .btn__login{ margin-bottom: 16px; }
 
 .btn__register{
-    border: 2px solid var(--medium-gray);
+    border: 1.8px solid var(--medium-gray);
     border-radius: 12px;
     padding: 10px;
+}
+
+.dropdown{
+    list-style-type: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding: 30px 0 8px 23px;
+}
+
+.ilustration-dropdowm{
+    display: block;
+    width: 20px;
+    height: 20px;
+    content: "";
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.dropdown__item:nth-of-type(1) .ilustration-dropdowm{ background-image: url("../images/icon-todo.svg"); }
+
+.dropdown__item:nth-of-type(2) .ilustration-dropdowm{ background-image: url("../images/icon-calendar.svg"); }
+
+.dropdown__item:nth-of-type(3) .ilustration-dropdowm{ background-image: url("../images/icon-reminders.svg"); }
+
+.dropdown__item:nth-of-type(4) .ilustration-dropdowm{ background-image: url("../images/icon-planning.svg"); }
+
+.dropdown__features .dropdown__item:nth-child(-n+3), 
+.dropdown__company .dropdown__item:nth-child(-n+2){ margin-bottom: 22px; }
+
+.dropdown__link{
+    text-decoration: none;
+    display: block;
+    color: var(--medium-gray);
+    font-weight: 500;
+}
+
+.dropdown__content{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 13px;
 }
 
 /***********************************/
@@ -140,7 +179,8 @@ body{
 .clients__item img,
 .logo img,
 .btn-menu img,
-.navigation__row img
+.navigation__row img,
+.dropdown__item-icon
 {
     display: block;
     max-width: 100%;

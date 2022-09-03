@@ -31,95 +31,90 @@
         <!--dispositivos moveis e tablets, utilizar position absolute em relação ao body-->
         <div class="menu menu_hidden">
           <nav class="navigation">
-            <ul class="navigation__links">
+            <ul class="navigation__links" role="menu">
               <li class="navigation__link-item">
-                <div class="navigation__row">
-                  <a
-                    href="#Features"
-                    rel="next"
-                    target="_self"
-                    class="navigation__link" 
-                    data-toggle="dropdown__features"
-                    >Features</a
-                  >
+                <a
+                  href="#Features"
+                  rel="next"
+                  target="_self"
+                  class="navigation__link"
+                  tabindex="0"
+                  data-toggle="dropdown__features"
+                  data-open="false"
+                  role="menuitem"
+                  aria-expanded="true"
+                  >Features
                   <img
                     src="./images/icon-arrow-down.svg"
                     alt="icon ilustration arrow down"
                   />
-                </div>
-                <div
+                </a>
+                <!--dropdown menu features, transformar em uma lista não ordenada-->
+                <ul
                   class="dropdown dropdown__features dropdown-close"
                   role="menu"
+                  data-state="hidden"
+                  role="menu"
                 >
-                  <!--dropdown menu features-->
-                  <div class="dropdown__item" tabindex="0" role="menuitem">
-                    <img
-                      src="./images/icon-todo.svg"
-                      alt=""
-                      class="dropdown__item-icon"
-                      title="icon todo"
-                    />
-                    <p class="dropdown__item-text">Todo List</p>
-                  </div>
-                  <div class="dropdown__item" tabindex="0" role="menuitem">
-                    <img
-                      src="./images/icon-calendar.svg"
-                      alt=""
-                      class="dropdown__item-icon"
-                      title="icon calendar"
-                    />
-                    <p class="dropdown__item-text">Calendar</p>
-                  </div>
-                  <div class="dropdown__item" tabindex="0" role="menuitem">
-                    <img
-                      src="./images/icon-reminders.svg"
-                      alt=""
-                      class="dropdown__item-icon"
-                      title="icon reminders"
-                    />
-                    <p class="dropdown__item-text">Reminders</p>
-                  </div>
-                  <div class="dropdown__item" tabindex="0" role="menuitem">
-                    <img
-                      src="./images/icon-planning.svg"
-                      alt=""
-                      class="dropdown__item-icon"
-                      title="icon planning"
-                    />
-                    <p class="dropdown__item-text">Planning</p>
-                  </div>
-                </div>
+                  <li class="dropdown__item">
+                    <div class="dropdown__content">
+                      <span class="ilustration-dropdowm"></span>
+                      <a href="#todo-list" target="_self" rel="next" tabindex="0" class="dropdown__link" role="menuitem">Todo List</a>
+                    </div>
+                  </li>
+                  <li class="dropdown__item">
+                    <div class="dropdown__content">
+                      <span class="ilustration-dropdowm"></span>
+                      <a href="#calendar" target="_self" rel="next" tabindex="0" class="dropdown__link" role="menuitem">Calendar</a>
+                    </div>
+                  </li>
+                  <li class="dropdown__item">
+                    <div class="dropdown__content">
+                      <span class="ilustration-dropdowm"></span>
+                      <a href="#reminders" target="_self" rel="next" tabindex="0" class="dropdown__link" role="menuitem">Reminders</a>
+                    </div>
+                  </li>
+                  <li class="dropdown__item">
+                    <div class="dropdown__content">
+                      <span class="ilustration-dropdowm"></span>
+                      <a href="#planning" target="_self" rel="next" tabindex="0" class="dropdown__link" role="menuitem">Planning</a>
+                    </div>
+                  </li>
+                </ul>
               </li>
               <li class="navigation__link-item">
-                <div class="navigation__row">
-                  <a
-                    href="#Company"
-                    rel="next"
-                    target="_self"
-                    class="navigation__link"
-                    data-toggle="dropdown__company"
-                    >Company</a
-                  >
+                <a
+                  href="#Company"
+                  rel="next"
+                  target="_self"
+                  class="navigation__link"
+                  data-toggle="dropdown__company"
+                  data-open="false"
+                  aria-expanded="true"
+                  role="menuitem"
+                  >Company
                   <img
                     src="./images/icon-arrow-down.svg"
                     alt="icon ilustration arrow down"
                   />
-                </div>
-                <div
+                </a>
+                <!--dropdown menu company-->
+                <ul
                   class="dropdown dropdown__company dropdown-close"
                   role="menu"
+                  data-state="hidden"
+                  role="menu"
                 >
-                  <!--dropdown menu company-->
-                  <div class="dropdown__item" tabindex="0" role="menuitem">
-                    <p class="dropdown__item-text">History</p>
-                  </div>
-                  <div class="dropdown__item" tabindex="0" role="menuitem">
-                    <p class="dropdown__item-text">Our Team</p>
-                  </div>
-                  <div class="dropdown__item" tabindex="0" role="menuitem">
-                    <p class="dropdown__item-text">Blog</p>
-                  </div>
-                </div>
+                  <li class="dropdown__item">
+                    <a href="#history" class="dropdown__link" target="_self" rel="next" tabindex="0" role="menuitem">History</a>
+                  </li>
+                  <li class="dropdown__item">
+                    <a href="#our-team" class="dropdown__link" target="_self" rel="next" tabindex="0" role="menuitem">Our Team</a>
+                  </li>
+                  <li class="dropdown__item">
+                    <a href="#blog" class="dropdown__link" target="_self" rel="next" tabindex="0" role="menuitem">Blog</a>
+                  </li>
+                </ul>
               </li>
               <li class="navigation__link-item">
                 <a
@@ -127,6 +122,8 @@
                   rel="next"
                   target="_self"
                   class="navigation__link"
+                  tabindex="0"
+                  role="menuitem"
                   >Careers</a
                 >
               </li>
@@ -136,6 +133,8 @@
                   rel="next"
                   target="_self"
                   class="navigation__link"
+                  tabindex="0"
+                  role="menuitem"
                   >About</a
                 >
               </li>
