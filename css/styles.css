@@ -28,6 +28,7 @@ body {
   font-family: "Epilogue", sans-serif;
   position: relative;
   font-size: 16px;
+  background-color: var(--almost-white);
 }
 
 /**overlay in body**/
@@ -261,6 +262,11 @@ body {
   justify-content: center;
 }
 
+/**ACTIVE STATES**/
+.navigation__link:hover{
+  color: var(--almost-black);
+}
+
 /**breakpoint 376px**/
 @media screen and (min-width: 376px) {
   .ilustration-side img,
@@ -302,7 +308,6 @@ body {
     flex-flow: row nowrap;
     align-items: center;
     justify-content: space-between;
-    background-color: white;
   }
 
   .navigation {
@@ -337,9 +342,44 @@ body {
     font-size: 0.9rem;
     margin-bottom: 0;
   }
-  
+
   .btn__register {
     border: 2px solid var(--medium-gray);
     padding: 11px 20px;
+  }
+
+  .dropdown__link[data-toggle^="dropdown"] {
+    position: relative;
+  }
+
+  .dropdown {
+    padding: 25px 23px 25px 25px;
+  }
+
+  .dropdown {
+    position: absolute;
+    z-index: 1000;
+    background-color: white;
+    top: 75px;
+    box-shadow: 12px 12px 20px 2px #ededed, -12px -5px 20px 2px #ededed;
+    border-radius: 10px;
+  }
+
+  .dropdown__features {
+    left: 115px;
+  }
+
+  .ilustration-dropdowm {
+    width: 16px;
+    height: 16px;
+  }
+
+  .dropdown__link {
+    font-size: 0.88rem;
+  }
+
+  .dropdown__features .dropdown__item:nth-child(-n+3),
+  .dropdown__company .dropdown__item:nth-child(-n+2) {
+    margin-bottom: 16px;
   }
 }
