@@ -282,20 +282,15 @@ body {
   }
 
   .main__header {
-    display: flex;
+    display: grid;
+    grid-template-columns: minmax(min-content, 87px) minmax(min-content, 1fr);
     padding: 26.5px 40px 0 40px;
     align-items: center;
-    justify-content: start;
     gap: 60px;
     margin-bottom: 25px;
   }
 
-  .logo{
-    /*flex-grow: 1;*/
-  }
-
   .menu {
-    /*flex-grow: 2;*/
     position: static;
     z-index: auto;
     min-height: auto;
@@ -321,7 +316,7 @@ body {
     gap: 38px;
   }
 
-  .navigation__link-item:nth-last-of-type(-n+4) {
+  .navigation__link-item:nth-last-of-type(-n + 4) {
     margin-bottom: 0;
   }
 
@@ -334,9 +329,17 @@ body {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
+    gap: 40px;
   }
 
-  .btn__login {
+  .btn__login,
+  .btn__register {
+    font-size: 0.9rem;
     margin-bottom: 0;
+  }
+  
+  .btn__register {
+    border: 2px solid var(--medium-gray);
+    padding: 11px 20px;
   }
 }
