@@ -30,7 +30,6 @@
             height="27"
           />
         </div>
-        <!--dispositivos moveis e tablets, utilizar position absolute em relação ao body-->
         <div class="menu menu_hidden">
           <nav class="navigation">
             <ul class="navigation__links" role="menu">
@@ -46,12 +45,8 @@
                   data-open="false"
                   role="menuitem"
                   >Features
-                  <img
-                    src="./images/icon-arrow-down.svg"
-                    alt="icon ilustration arrow down"
-                  />
+                  <span class="icon-link"></span>
                 </a>
-                <!--dropdown menu features, transformar em uma lista não ordenada-->
                 <ul
                   class="dropdown dropdown__features dropdown-close"
                   role="menu"
@@ -95,12 +90,8 @@
                   data-open="false"
                   role="menuitem"
                   >Company
-                  <img
-                    src="./images/icon-arrow-down.svg"
-                    alt="icon ilustration arrow down"
-                  />
+                  <span class="icon-link"></span>
                 </a>
-                <!--dropdown menu company-->
                 <ul
                   class="dropdown dropdown__company dropdown-close"
                   role="menu"
@@ -147,9 +138,6 @@
             <button type="button" class="btn btn__register" aria-label="Botão registrar">Register</button>
           </div>
         </div>
-        <!--
-          so aparecer em dispositivos moveis e tablets, desktop ser ocultado
-        -->
         <button
           type="button"
           class="btn btn-menu"
@@ -168,14 +156,12 @@
             type="image/png"
             title="ilustration de hero computer"
           />
-          <!--
           <source
-            media="(min-width: 751px)"
+            media="(min-width: 1146px)"
             srcset="./images/image-hero-desktop.png"
             type="image/png"
             title="ilustration de hero computer"
           />
-          -->
           <img
             src="./images/image-hero-mobile.png"
             alt="homen com camiseta branca com computador sendo segurado por uma mão e na outra mão, utilizando-o"

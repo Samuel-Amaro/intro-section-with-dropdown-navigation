@@ -1,23 +1,27 @@
 "use strict";
 
-let btnOpenMenu = document.querySelector(".btn-menu");
-let linksNavigation = document.querySelectorAll(".navigation__link");
+function initEvents() {
+  let btnOpenMenu = document.querySelector(".btn-menu");
+  let linksNavigation = document.querySelectorAll(".navigation__link");
 
-//handler to dropdown
-linksNavigation.forEach((link) => {
-    if(link.dataset.toggle){
-        link.addEventListener("pointerdown", handlerLinksNavigation);
-        link.addEventListener("keydown", handlerLinksNavigationKeys);
+  //handler to dropdown
+  linksNavigation.forEach((link) => {
+    if (link.dataset.toggle) {
+      link.addEventListener("pointerdown", handlerLinksNavigation);
+      link.addEventListener("keydown", handlerLinksNavigationKeys);
     }
-});
+  });
+  
+  if (btnOpenMenu) {
+    //add handler open menu mobile
+    btnOpenMenu.addEventListener("pointerdown", handlerBtnMenu);
+  }
+}
+
+initEvents();
 
 function handlerBtnMenu(event) {
     showMenuMobile();
-}
-
-if(btnOpenMenu) {
-  //add handler open menu mobile
-  btnOpenMenu.addEventListener("pointerdown", handlerBtnMenu);
 }
 
 function showMenuMobile() {
@@ -61,14 +65,12 @@ function toggleStateDropdownMenu(nameDropdown, link) {
         dropdown.classList.add("dropdown-open");
         dropdown.dataset.state = "visibility";
         link.dataset.open = "true";
-        toggleImgClickLink(link);
     }
     else if(dropdown.dataset.state === "visibility" && link.dataset.open === "true") {
         dropdown.classList.remove("dropdown-open");
         dropdown.classList.add("dropdown-close");
         dropdown.dataset.state = "hidden";
         link.dataset.open = "false";
-        toggleImgClickLink(link);
     }
 }
 
@@ -80,14 +82,5 @@ function toggleStateFocusDropdownMenu(nameDropdown, link) {
     //dropdown open
     }else if(dropdown.dataset.state === "visibility" && link.dataset.open === "true") {
         dropdown.querySelector(".dropdown__link").focus();
-    }
-}
-
-function toggleImgClickLink(element) {
-    let img = element.firstElementChild;
-    if(element.dataset.open === "false") { //arrow down
-        img.src = "./images/icon-arrow-down.svg";
-    }else if(element.dataset.open === "true") { //arrow up
-        img.src = "./images/icon-arrow-up.svg";
     }
 }
